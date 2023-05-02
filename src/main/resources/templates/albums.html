@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Song Count</th>
+        <th>Length in seconds</th>
+        <th>Album Art</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album : ${albums}">
+        <td th:text="${album.title}"></td>
+        <td th:text="${album.artist}"></td>
+        <td th:text="${album.songCount}"></td>
+        <td th:text="${album.length}"></td>
+        <td>
+            <img th:src="${album.imageURL}" alt="Album Art" width="100" height="100" />
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
